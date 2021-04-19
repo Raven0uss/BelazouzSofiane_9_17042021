@@ -46,6 +46,12 @@ export default class {
         .get()
         .then((snapshot) => {
           const bills = snapshot.docs
+            .sort((a, b) => {
+              const aDate = new Date(a.data().date);
+              const bDate = new Date(b.data().date);
+              if (aDate.getTime() >= bDate.getTime()) return -1;
+              return 1;
+            })
             .map((doc) => ({
               ...doc.data(),
               date: formatDate(doc.data().date),
