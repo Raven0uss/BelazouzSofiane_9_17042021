@@ -75,7 +75,7 @@ describe("Given I am connected as an employee", () => {
         localStorage: window.localStorage,
         onNavigate,
         PREVIOUS_LOCATION: "",
-        firebase: jest.fn(),
+        firestore: jest.fn(),
       });
 
       const buttonNewBill = screen.queryByTestId("btn-new-bill");
@@ -95,7 +95,7 @@ describe("Given I am connected as an employee", () => {
         localStorage: window.localStorage,
         onNavigate: jest.fn(),
         PREVIOUS_LOCATION: "",
-        firebase: jest.fn(),
+        firestore: jest.fn(),
       });
 
       $.fn.modal = jest.fn();
